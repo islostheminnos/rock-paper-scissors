@@ -5,7 +5,7 @@
 body{
     background-color: #2D92B8 ;
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
 }
 
 .title{
@@ -70,4 +70,79 @@ body{
     font-family: "Balsamiq Sans", sans-serif;
     font-size: 20px;
     top: 10px;
+}
+
+
+.selections{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.selections div{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    background-color: wheat;
+    border-radius: 50%;
+    transition: .2s ease-in;
+}
+
+.selections div:hover{
+    transform: scale(1.1);
+    background-color: rgb(243, 207, 140);
+    cursor: pointer;
+}
+
+
+.cards{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 225px;
+    border: 2px solid wheat;
+    border-radius: 15px;
+
+}
+
+
+@keyframes generateImage{
+    0%{
+          background: url("images/rock.png") no-repeat center center;
+          background-size: cover;
+    }
+    50%{
+          background: url("images/scissors.png") no-repeat center center;
+          background-size: cover;
+    }
+
+     100%{
+          background: url("images/paper.png") no-repeat center center;
+          background-size: cover;
+    }
+}
+
+.computer-card{
+     background-size: cover;
+}
+
+
+.anim-card{
+    -webkit-animation: generateImage .3s ease-in-out infinite alternate;
+}
+
+.winner-p{
+    font-size: xx-large;
+    font-weight: 800;
+    color: black;
 }
