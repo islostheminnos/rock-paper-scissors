@@ -14,6 +14,7 @@ let whoWon = document.createElement("p")
 let container= document.querySelector(".container")
 let playerChoice;
 let computerChoice
+let isClicked = false
 //Write a function which picks a random choice for computer
 let generateCompHand = ()=>{
     let randomlyGenerated = optionsContainer[Math.floor(Math.random() * optionsContainer.length -1) +1]
@@ -35,43 +36,58 @@ let imageAnimation = ()=>{
 imageAnimation()
 
 scissorsBtn.addEventListener("click", ()=>{
-    whoWon.innerText = ""
-    playerChoice = "scissors"
-    imageAnimation()
-    playerCard.style.background = `url("images/scissors.png") no-repeat center center`
-    playerCard.style.backgroundSize = "cover"
-    setTimeout(()=>{
+    if (isClicked === false){
+        isClicked = true
+         whoWon.innerText = ""
+        playerChoice = "scissors"
+        imageAnimation()
+        playerCard.style.background = `url("images/scissors.png") no-repeat center center`
+        playerCard.style.backgroundSize = "cover"
+     setTimeout(()=>{
         computerCard.style.background = `url("${generateImage()}") no-repeat center center`
         computerCard.style.backgroundSize = "cover"
         printWinner()
+        isClicked = false
     }, 3000)
+    }
+   
 })
 
 
 rockBtn.addEventListener("click", ()=>{
-    whoWon.innerText = ""
-    playerChoice = "rock"
-    imageAnimation()
-    playerCard.style.background = `url("images/rock.png") no-repeat center center`
-    playerCard.style.backgroundSize = "cover"
-    setTimeout(()=>{
-        computerCard.style.background = `url("${generateImage()}") no-repeat center center`
-        computerCard.style.backgroundSize = "cover"
-        printWinner()
+    if (isClicked === false){
+        isClicked = true
+         whoWon.innerText = ""
+        playerChoice = "rock"
+        imageAnimation()
+        playerCard.style.background = `url("images/rock.png") no-repeat center center`
+        playerCard.style.backgroundSize = "cover"
+        setTimeout(()=>{
+            computerCard.style.background = `url("${generateImage()}") no-repeat center center`
+            computerCard.style.backgroundSize = "cover"
+            printWinner()
+            isClicked = false
     }, 3000)
+    }
+   
 })
 
 paperBtn.addEventListener("click", ()=>{
-    whoWon.innerText = ""
-    playerChoice = "paper"
-    imageAnimation()
-    playerCard.style.background = `url("images/paper.png") no-repeat center center`
-    playerCard.style.backgroundSize = "cover"
-    setTimeout(()=>{
-        computerCard.style.background = `url("${generateImage()}") no-repeat center center`
-        computerCard.style.backgroundSize = "cover"
-        printWinner()
+    if (isClicked === false){
+        isClicked = true
+        whoWon.innerText = ""
+        playerChoice = "paper"
+        imageAnimation()
+        playerCard.style.background = `url("images/paper.png") no-repeat center center`
+        playerCard.style.backgroundSize = "cover"
+        setTimeout(()=>{
+            computerCard.style.background = `url("${generateImage()}") no-repeat center center`
+            computerCard.style.backgroundSize = "cover"
+            printWinner()
+            isClicked = false
     }, 3000)
+    }
+    
 })
 
 
