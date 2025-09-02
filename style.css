@@ -6,6 +6,7 @@ body{
     background-color: #2D92B8 ;
     height: 100vh;
     width: 100vw;
+    margin: 0 auto;
 }
 
 .title{
