@@ -35,13 +35,13 @@ let imageAnimation = ()=>{
 }
 imageAnimation()
 
-scissorsBtn.addEventListener("click", ()=>{
-    if (isClicked === false){
+let buttonsClickFunction = (rps)=>{
+     if (isClicked === false){
         isClicked = true
          whoWon.innerText = ""
-        playerChoice = "scissors"
+        playerChoice = rps
         imageAnimation()
-        playerCard.style.background = `url("images/scissors.png") no-repeat center center`
+        playerCard.style.background = `url("images/${rps}.png") no-repeat center center`
         playerCard.style.backgroundSize = "cover"
      setTimeout(()=>{
         computerCard.style.background = `url("${generateImage()}") no-repeat center center`
@@ -50,45 +50,14 @@ scissorsBtn.addEventListener("click", ()=>{
         isClicked = false
     }, 3000)
     }
-   
-})
+}
+
+scissorsBtn.addEventListener("click",() => buttonsClickFunction("rock"))
 
 
-rockBtn.addEventListener("click", ()=>{
-    if (isClicked === false){
-        isClicked = true
-         whoWon.innerText = ""
-        playerChoice = "rock"
-        imageAnimation()
-        playerCard.style.background = `url("images/rock.png") no-repeat center center`
-        playerCard.style.backgroundSize = "cover"
-        setTimeout(()=>{
-            computerCard.style.background = `url("${generateImage()}") no-repeat center center`
-            computerCard.style.backgroundSize = "cover"
-            printWinner()
-            isClicked = false
-    }, 3000)
-    }
-   
-})
+rockBtn.addEventListener("click", ()=>buttonsClickFunction("rock"))
 
-paperBtn.addEventListener("click", ()=>{
-    if (isClicked === false){
-        isClicked = true
-        whoWon.innerText = ""
-        playerChoice = "paper"
-        imageAnimation()
-        playerCard.style.background = `url("images/paper.png") no-repeat center center`
-        playerCard.style.backgroundSize = "cover"
-        setTimeout(()=>{
-            computerCard.style.background = `url("${generateImage()}") no-repeat center center`
-            computerCard.style.backgroundSize = "cover"
-            printWinner()
-            isClicked = false
-    }, 3000)
-    }
-    
-})
+paperBtn.addEventListener("click", ()=>buttonsClickFunction("paper"))
 
 
 
