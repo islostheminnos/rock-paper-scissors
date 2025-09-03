@@ -52,7 +52,7 @@ let buttonsClickFunction = (rps)=>{
     }
 }
 
-scissorsBtn.addEventListener("click",() => buttonsClickFunction("rock"))
+scissorsBtn.addEventListener("click",() => buttonsClickFunction("scissors"))
 
 
 rockBtn.addEventListener("click", ()=>buttonsClickFunction("rock"))
